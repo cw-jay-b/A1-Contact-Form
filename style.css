@@ -141,7 +141,7 @@ button {
 .success-message {
   position: absolute; 
   top: 1rem;
-  display: flex;
+  display: none;
   width: 33%;
   padding: 1.5rem;
   background-color: #2a4244;
