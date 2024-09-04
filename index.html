@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <title>Assignment1 | Contact form</title>
+</head>
+<body>
+
+  <main>
+    <h1>
+      Contact Us
+    </h1>
+    <form action="#" class="form-wrapper">
+      <div class="form-input-wrapper" id="name-input-wrapper">
+        <div>
+          <label for="fname">First Name<span class="required-input">*</span></label>
+          <input type="text" id="fname" name="fname" >
+          <div class="error">This field is required</div>
+        </div>
+  
+        <div>
+          <label for="lname">Last Name<span class="required-input">*</span></label>
+          <input type="text" id="lname" name="lname" >
+          <div class="error">This field is required</div>
+        </div>
+      </div>
+
+      <div class="form-input-wrapper">
+        <label for="email">Email Address<span class="required-input">*</span></label>
+        <input type="email" id="email" name="email" >
+        <div class="error">Please enter a valid email address</div>
+      </div>
+
+      <div class="form-input-wrapper">
+        <div id="query-label">Query type <span class="required-input">*</span></div>
+
+
+        <div class="radio-wrapper">
+          <span class="radio-input-wrapper">
+            <input type="radio" id="gen-enq" name="query-type" value="General Enquiry">
+            <label for="gen-enq">General Enquiry</label>
+          </span>
+          <span class="radio-input-wrapper">
+            <input type="radio" id="supp-enq" name="query-type" value="Support Enquiry">
+            <label for="supp-enq">Support Enquiry</label>
+          </span>
+        </div>
+
+        <div class="error">
+          Please select a query type
+        </div>
+    </div>
+    
+    <div class="form-input-wrapper">
+      <label for="msg">Message<span class="required-input">*</span></label>
+        <textarea name="msg" id="msg" rows="3"></textarea>
+        <div class="error">This field is required</div>
+      </div>
+
+      <div style="width: 100%;margin-top: 1rem;" >
+        <div id="form-consent-wrapper">
+          <input type="checkbox" id="consent" name="consent" >
+          <label for="consent">I consent to being contacted by the team<span class="required-input">*</span></label>
+        </div>
+        <div class="error">To submit this form, please consent to being contacted</div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <!-- 
+  Complete the form and see a success toast message upon successful submission
+  Receive form validation messages if:
+  A required field has been missed
+  The email address is not formatted correctly
+  Complete the form only using their keyboard
+  Have inputs, error messages, and the success message announced on their screen reader
+  View the optimal layout for the interface depending on their device's screen size
+  See hover and focus states for all interactive elements on the page
+
+  Email Address
+  Please enter a valid email address
+  This field is required
+
+  Query Type
+  General Enquiry
+  Support Request
+  Please select a query type
+
+  Message
+  This field is required
+
+  I consent to being contacted by the team
+  To submit this form, please consent to being contacted
+
+  Submit
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+</body>
+</html>
