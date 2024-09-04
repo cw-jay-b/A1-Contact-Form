@@ -1,171 +1,180 @@
-/* 
-## Colors
-
-### Primary
-
-- Green 200 (lighter): hsl(148, 38%, 91%)
-- Green 600 (medium): hsl(169, 82%, 27%)
-- Red: hsl(0, 66%, 54%)
-
-### Neutral
-
-- White: hsl(0, 0%, 100%)
-- Grey 500 (medium): hsl(186, 15%, 59%)
-- Grey 900 (darker): hsl(187, 24%, 22%)
-*/
-
-*{
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-
-    /* outline: 1px solid pink; */
-    /* background-color: rgba(255, 192, 203, 0.822); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-:root{
-    --white: hsl(0, 0%, 100%);
-    --error: hsl(0, 66%, 54%);
-    --grey-md: hsl(186, 15%, 59%);
-    --grey-dark: hsl(187, 24%, 22%);
-    --light-green:  hsl(148, 38%, 91%);
-    --md-grean:  hsl(169, 82%, 27%);
-    --dark-grean:  hsl(171, 83%, 14%);
+:root {
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(0, 66%, 54%);
+  --grey-md: hsl(186, 15%, 59%);
+  --grey-dark: hsl(187, 24%, 22%);
+  --light-green: hsl(148, 38%, 91%);
+  --md-green: hsl(169, 82%, 27%);
+  --dark-green: hsl(171, 83%, 14%);
 }
-
-body{
-    font-family: Karla, 'Courier New', Courier, monospace;
-    height: 100vh;
-    color: var(--grey-dark);
-    background-color: var(--light-green);
+body {
+  font-family: Karla, "Courier New", Courier, monospace;
+  height: 100vh;
+  color: var(--grey-dark);
+  background-color: var(--light-green);
 }
-
-body, main, form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+body,
+main,
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-
-main{
-    background-color: var(--white);
-    border-radius: 1rem;
-    width: 50%;
-    /* max-height: fit-content; */
-    padding: 1.5rem;
+main {
+  background-color: var(--white);
+  border-radius: 1rem;
+  width: 50%;
+  padding: 1.5rem;
 }
-
-.form-wrapper{
-    gap: 1rem;
+.form-wrapper {
+  gap: 1rem;
 }
-
-.form-input-wrapper label{
-    font-size: 0.75rem;
-    display: inline-block;
-    margin-bottom: 0.5rem;
+.form-input-wrapper label {
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
-
-input, textarea{
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--grey-md);
-    outline: none;
-    border-radius: 0.5rem;
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--grey-md);
+  outline: none;
+  border-radius: 0.5rem;
 }
-
-input:hover, textarea:hover, input:active, textarea:active{
-    cursor: pointer;
-    border-color: var(--md-grean);
+input:hover,
+textarea:hover,
+input:active,
+textarea:active {
+  cursor: pointer;
+  border-color: var(--md-green);
 }
-
-/* #name-input-wrapper{
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-} */
-
-.radio-input-wrapper{
-    /* padding: 0.75rem 1rem; */
-    border: 1px solid var(--grey-md);
-    outline: none;
-    border-radius: 0.5rem;
-    width: 100%;
-
-    display: flex;
+.radio-input-wrapper {
+  border: 1px solid var(--grey-md);
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
 }
-.radio-input-wrapper label{
-    margin: 0.75rem 0.5rem;
-    width: 100%;
+.radio-input-wrapper label {
+  margin: 0.75rem 0.5rem;
+  width: 100%;
+  height: 75%;
 }
-
-.radio-input-wrapper:hover{
-    cursor: pointer;
-    border-color: var(--md-grean);
-    background-color: var(--light-green);
+.radio-input-wrapper:hover {
+  cursor: pointer;
+  border-color: var(--md-green);
 }
-
-.radio-wrapper, #form-consent-wrapper, #name-input-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    width: 100%;
+.radio-wrapper,
+#form-consent-wrapper,
+#name-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
 }
-
-
+.selected {
+  cursor: pointer;
+  border-color: var(--md-green);
+  background-color: var(--light-green);
+}
 
 /* * */
-.required-input{
-    color: hsl(169, 82%, 27%);
-    margin: 0.25rem;
+.required-input {
+  color: hsl(169, 82%, 27%);
+  margin: 0.25rem;
 }
-
 /* Custom checkbox styling */
-input[type="checkbox"], input[type="radio"] {
-    accent-color: hsl(169, 82%, 27%);
-    width: auto;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.error{
-    display: none;
-    font-size: 0.75rem;
-    color: var(--error);
-    margin-top: 0.5rem;
-}
-
-label, #query-label{
-    font-size: 0.75rem;
-}
-
-input[type="radio"]{
-    margin-left: 1rem;
-}
-
-.radio-wrapper label:hover {
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: hsl(169, 82%, 27%);
+  width: auto;
+  &:hover {
     cursor: pointer;
+  }
+}
+.error {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--error);
+  margin-top: 0.5rem;
+}
+label,
+#query-label {
+  font-size: 0.75rem;
+}
+input[type="radio"] {
+  margin-left: 1rem;
+}
+.radio-wrapper label:hover {
+  cursor: pointer;
 }
 
-
-#query-label{
-    margin: 0.5rem 0;
+#query-label {
+  margin: 0.5rem 0;
+}
+.form-input-wrapper,
+textarea,
+h1,
+input {
+  width: 100%;
+}
+button {
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  background-color: var(--md-green);
+  color: var(--white);
+  &:hover {
+    cursor: pointer;
+    background-color: var(--dark-green);
+  }
 }
 
-.form-input-wrapper, textarea, h1, input{
-    width: 100%;
+@media (max-width: 768px) {
+  main {
+    width: 90%; /* Adjusted width for smaller screens */
+    padding: 1rem;
+  }
+
+  textarea {
+    width: 100%; /* Full width on medium screens */
+    height: auto; /* Default height */
+  }
 }
 
-button{
-    outline: none;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    background-color: var(--md-grean);
-    color: var(--white);
-    &:hover{
-        cursor: pointer;
-        background-color: var(--dark-grean);
-    }
+@media (max-width: 375px) {
+  .form-wrapper,
+  .form-input-wrapper,
+  #name-input-wrapper,
+  .radio-wrapper {
+    flex-direction: column; /* Column layout for smaller screens */
+  }
+
+  .radio-input-wrapper {
+    flex-direction: row; /* Keeps radio button labels aligned */
+    align-items: center;
+  }
+
+  .radio-input-wrapper label {
+    margin: 0.5rem; /* Adjust spacing for better alignment */
+  }
+
+  textarea {
+    width: 100%; /* Make sure it takes full width */
+    height: calc(100vw - 32px); /* Set height equal to width minus padding, maintaining a square shape */
+    max-height: 300px; /* Optional max-height to prevent it from becoming too large */
+  }
+
+  button {
+    width: 100%; /* Button takes full width on mobile */
+  }
 }
