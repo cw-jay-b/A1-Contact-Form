@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const queryTypeInputs = document.querySelectorAll('input[name="query-type"]');
   const messageInput = document.getElementById("msg");
   const consentCheckbox = document.getElementById("consent");
+  const successMessage = document.getElementById("successMessage");
 
   const errorMessages = {
     firstName: document.querySelector("#fname ~ .error"),
@@ -91,15 +92,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!validateForm()) {
       event.preventDefault(); // Prevent form submission if validation fails
     } else {
-      // Hide all error messages before displaying success message
+      // Hide all error messages before displaying the success message
       for (const field in errorMessages) {
         showError(field, false);
       }
 
-      // Display success message
-      alert(
-        "Message Sent! Thanks for completing the form. We'll be in touch soon!"
-      );
+      // Display success message div
+      successMessage.style.display = "flex";
+
+      // Hide the success message after 3 seconds
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
+
       form.reset(); // Reset form fields
     }
   });

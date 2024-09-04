@@ -30,7 +30,7 @@ form {
 main {
   background-color: var(--white);
   border-radius: 1rem;
-  width: 50%;
+  width: 40%;
   padding: 1.5rem;
 }
 .form-wrapper {
@@ -43,7 +43,7 @@ main {
 }
 input,
 textarea {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--grey-md);
   outline: none;
   border-radius: 0.5rem;
@@ -90,7 +90,6 @@ textarea:active {
   color: hsl(169, 82%, 27%);
   margin: 0.25rem;
 }
-/* Custom checkbox styling */
 input[type="checkbox"],
 input[type="radio"] {
   accent-color: hsl(169, 82%, 27%);
@@ -139,15 +138,45 @@ button {
   }
 }
 
+.success-message {
+  position: absolute; 
+  top: 1rem;
+  display: flex;
+  width: 33%;
+  padding: 1.5rem;
+  background-color: #2a4244;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 @media (max-width: 768px) {
   main {
-    width: 90%; /* Adjusted width for smaller screens */
+    width: 90%; 
     padding: 1rem;
   }
 
   textarea {
-    width: 100%; /* Full width on medium screens */
-    height: auto; /* Default height */
+    width: 100%; 
+    height: auto; 
   }
 }
 
@@ -156,25 +185,25 @@ button {
   .form-input-wrapper,
   #name-input-wrapper,
   .radio-wrapper {
-    flex-direction: column; /* Column layout for smaller screens */
+    flex-direction: column; 
   }
 
   .radio-input-wrapper {
-    flex-direction: row; /* Keeps radio button labels aligned */
+    flex-direction: row; 
     align-items: center;
   }
 
   .radio-input-wrapper label {
-    margin: 0.5rem; /* Adjust spacing for better alignment */
+    margin: 0.5rem; 
   }
 
   textarea {
-    width: 100%; /* Make sure it takes full width */
-    height: calc(100vw - 32px); /* Set height equal to width minus padding, maintaining a square shape */
-    max-height: 300px; /* Optional max-height to prevent it from becoming too large */
+    width: 100%; 
+    height: calc(100vw - 32px); 
+    max-height: 300px; 
   }
 
   button {
-    width: 100%; /* Button takes full width on mobile */
+    width: 100%;
   }
 }
