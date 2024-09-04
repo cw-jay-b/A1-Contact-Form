@@ -47,26 +47,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const validateForm = () => {
     let isValid = true;
 
-    isValid &= validateField(
-      firstNameInput,
-      "firstName",
-      (value) => value !== ""
-    );
-    isValid &= validateField(
-      lastNameInput,
-      "lastName",
-      (value) => value !== ""
-    );
-    isValid &= validateField(emailInput, "email", validateEmail);
-    isValid &= validateQueryType();
-    isValid &= validateField(messageInput, "message", (value) => value !== "");
-    isValid &= consentCheckbox.checked;
+    isValid =
+      validateField(firstNameInput, "firstName", (value) => value !== "") &&
+      isValid;
+    isValid =
+      validateField(lastNameInput, "lastName", (value) => value !== "") &&
+      isValid;
+    isValid = validateField(emailInput, "email", validateEmail) && isValid;
+    isValid = validateQueryType() && isValid;
+    isValid =
+      validateField(messageInput, "message", (value) => value !== "") &&
+      isValid;
+    isValid = consentCheckbox.checked && isValid;
     showError("consent", !consentCheckbox.checked);
 
     return isValid;
   };
 
-  // Event listeners for real-time validation
   firstNameInput.addEventListener("input", () =>
     validateField(firstNameInput, "firstName", (value) => value !== "")
   );
@@ -89,23 +86,22 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     if (!validateForm()) {
-      event.preventDefault(); // Prevent form submission if validation fails
-    } else {
-      // Hide all error messages before displaying the success message
-      for (const field in errorMessages) {
-        showError(field, false);
-      }
-
-      // Display success message div
-      successMessage.style.display = "flex";
-
-      // Hide the success message after 3 seconds
-      setTimeout(() => {
-        successMessage.style.display = "none";
-      }, 3000);
-
-      form.reset(); // Reset form fields
+      return;
     }
+
+    for (const field in errorMessages) {
+      showError(field, false);
+    }
+
+    successMessage.style.display = "block";
+
+    setTimeout(() => {
+      successMessage.style.display = "none";
+    }, 3000);
+
+    form.reset(); 
   });
 });
