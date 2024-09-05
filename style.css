@@ -124,6 +124,10 @@ h1,
 input {
   width: 100%;
 }
+
+h1{
+  margin-bottom: 1.5rem;
+} 
 button {
   outline: none;
   border: none;
