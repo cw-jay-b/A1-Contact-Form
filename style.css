@@ -52,8 +52,8 @@ textarea {
 }
 input:hover,
 textarea:hover,
-input:active,
-textarea:active {
+input:focus,
+textarea:focus {
   cursor: pointer;
   border-color: var(--md-green);
 }
@@ -93,55 +93,27 @@ textarea:active {
   margin: 0.25rem;
 } 
 
-/* input[type="checkbox"],
+
+
+input[type="checkbox"],
 input[type="radio"] {
   accent-color: hsl(169, 82%, 27%);
   width: auto;
-  &:hover {
-    cursor: pointer;
-  }
-} */
-/* General styling for checkboxes and radio buttons */
-input[type="checkbox"],
-input[type="radio"] {
-  accent-color: hsl(169, 82%, 27%); /* Custom color for both checkboxes and radio buttons */
-  width: auto;
 }
 
-/* Hover state for both checkboxes and radio buttons */
 input[type="checkbox"]:hover,
 input[type="radio"]:hover {
-  cursor: pointer; /* Ensure pointer cursor on hover */
+  cursor: pointer; 
 }
 
-/* Focus state for both checkboxes and radio buttons */
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
-  outline: 2px solid hsl(169, 82%, 47%); /* Distinct outline to show focus */
-  outline-offset: 2px; /* Space between outline and element */
+input[type="checkbox"]:focus {
+  outline: 2px solid hsl(169, 82%, 47%); 
+  outline-offset: 2px; 
 }
 
-/* Active state for both checkboxes and radio buttons */
-input[type="checkbox"]:active,
-input[type="radio"]:active {
-  background-color: hsl(169, 82%, 27%); /* Change background color when active */
-  border: 2px solid hsl(169, 82%, 47%); /* Add border for a more pronounced effect */
-}
-
-/* Additional styles for labels associated with checkboxes and radio buttons */
-#form-consent-wrapper {
-  display: flex;
-  align-items: center; /* Center checkbox and label vertically */
-  gap: 0.5rem; /* Space between checkbox and label */
-}
-
-#form-consent-wrapper label {
-  cursor: pointer; /* Ensure pointer cursor on label hover */
-}
-
-/* Required input styling */
-.required-input {
-  color: red; /* Color for required input asterisk */
+input[type="checkbox"]:active {
+  background-color: hsl(169, 82%, 27%); 
+  border: 2px solid hsl(169, 82%, 47%); 
 }
 
 .error {
@@ -182,26 +154,25 @@ button {
   width: 100%;
   background-color: var(--md-green);
   color: var(--white);
-  &:hover {
+  &:hover, &:focus {
     cursor: pointer;
     background-color: var(--dark-green);
   }
 }
 
 .success-message {
-  position: absolute; 
+  position: absolute;
   top: 0.75rem;
-  display: none;
-  /* width: 33%; */
+  display: flex!important;
   min-width: 20rem;
-  max-width: 33%;
+  max-width: 30%;
   padding: 1rem;
   background-color: #2a4244;
   color: #fff;
   text-align: center;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   animation: fadeIn 0.5s ease-in-out;
   flex-direction: column;
   align-items: flex-start;
