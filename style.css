@@ -30,8 +30,10 @@ form {
 main {
   background-color: var(--white);
   border-radius: 1rem;
-  width: 40%;
-  padding: 1.5rem;
+  /* width: 40%; */
+  padding: 1rem;
+  width: 30rem;
+  height: fit-content;
 }
 .form-wrapper {
   gap: 1rem;
@@ -89,15 +91,59 @@ textarea:active {
 .required-input {
   color: hsl(169, 82%, 27%);
   margin: 0.25rem;
-}
-input[type="checkbox"],
+} 
+
+/* input[type="checkbox"],
 input[type="radio"] {
   accent-color: hsl(169, 82%, 27%);
   width: auto;
   &:hover {
     cursor: pointer;
   }
+} */
+/* General styling for checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: hsl(169, 82%, 27%); /* Custom color for both checkboxes and radio buttons */
+  width: auto;
 }
+
+/* Hover state for both checkboxes and radio buttons */
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  cursor: pointer; /* Ensure pointer cursor on hover */
+}
+
+/* Focus state for both checkboxes and radio buttons */
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 2px solid hsl(169, 82%, 47%); /* Distinct outline to show focus */
+  outline-offset: 2px; /* Space between outline and element */
+}
+
+/* Active state for both checkboxes and radio buttons */
+input[type="checkbox"]:active,
+input[type="radio"]:active {
+  background-color: hsl(169, 82%, 27%); /* Change background color when active */
+  border: 2px solid hsl(169, 82%, 47%); /* Add border for a more pronounced effect */
+}
+
+/* Additional styles for labels associated with checkboxes and radio buttons */
+#form-consent-wrapper {
+  display: flex;
+  align-items: center; /* Center checkbox and label vertically */
+  gap: 0.5rem; /* Space between checkbox and label */
+}
+
+#form-consent-wrapper label {
+  cursor: pointer; /* Ensure pointer cursor on label hover */
+}
+
+/* Required input styling */
+.required-input {
+  color: red; /* Color for required input asterisk */
+}
+
 .error {
   display: none;
   font-size: 0.75rem;
@@ -126,7 +172,7 @@ input {
 }
 
 h1{
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 } 
 button {
   outline: none;
@@ -144,12 +190,12 @@ button {
 
 .success-message {
   position: absolute; 
-  top: 1rem;
+  top: 0.75rem;
   display: none;
   /* width: 33%; */
   min-width: 20rem;
   max-width: 33%;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: #2a4244;
   color: #fff;
   text-align: center;
