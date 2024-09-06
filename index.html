@@ -43,8 +43,7 @@
             width: 100%;
         ">
             <label for="fname">First Name<span class="required-input">*</span></label>
-        
-            <input type="text" id="fname" name="fname">
+            <input type="text" onkeydown="return /[a-z]/i.test(event.key)" id="fname" name="fname">
         
             <div class="error">This field is required</div>
           </div>
@@ -53,10 +52,12 @@
             width: 100%;
         ">
             <label for="lname">Last Name<span class="required-input">*</span></label>
-        
-            <input type="text" id="lname" name="lname">
+            <input type="text" onkeydown="return /[a-z]/i.test(event.key)" id="lname" name="lname">
+
+            <!-- <input type="text" pattern="  [A-Z][a-zA-Z'-]+(?:\s[A-Z][a-zA-Z'-]+)?" id="lname" name="lname"> -->
         
             <div class="error">This field is required</div>
+            <!-- <div class="errorName">Not a valid first name</div> -->
           </div>
         </div>
 

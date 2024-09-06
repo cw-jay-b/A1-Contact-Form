@@ -116,7 +116,7 @@ input[type="checkbox"]:active {
   border: 2px solid hsl(169, 82%, 47%); 
 }
 
-.error {
+.error, .errorName {
   display: none;
   font-size: 0.75rem;
   color: var(--error);
@@ -163,7 +163,7 @@ button {
 .success-message {
   position: absolute;
   top: 0.75rem;
-  display: flex!important;
+  display: none;
   min-width: 20rem;
   max-width: 30%;
   padding: 1rem;
